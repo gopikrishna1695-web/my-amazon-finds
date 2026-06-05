@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -17,7 +16,7 @@
 }
 
 body{
-    font-family:'Inter',sans-serif;
+    font-family:'Inter', Arial, sans-serif;
     background:#fafafa;
     color:#222;
     line-height:1.6;
@@ -32,24 +31,27 @@ body{
     justify-content:center;
     align-items:center;
     text-align:center;
-    background:linear-gradient(
-        rgba(255,255,255,0.75),
-        rgba(255,255,255,0.75)
-    ),
-    url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80");
+    padding:20px;
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.75),
+            rgba(255,255,255,0.75)
+        ),
+        url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80");
     background-size:cover;
     background-position:center;
+    background-repeat:no-repeat;
 }
 
 .hero h1{
-    font-family:'Playfair Display',serif;
-    font-size:60px;
+    font-family:'Playfair Display', serif;
+    font-size:clamp(2.5rem, 6vw, 4rem);
     margin-bottom:10px;
 }
 
 .hero h2{
-    font-family:'Playfair Display',serif;
-    font-size:40px;
+    font-family:'Playfair Display', serif;
+    font-size:clamp(1.8rem, 4vw, 2.5rem);
     font-weight:600;
 }
 
@@ -66,7 +68,7 @@ body{
     text-align:center;
     padding-top:80px;
     font-size:36px;
-    font-family:'Playfair Display',serif;
+    font-family:'Playfair Display', serif;
 }
 
 .categories{
@@ -74,16 +76,16 @@ body{
     margin:auto;
     padding:60px 30px 100px;
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
     gap:30px;
 }
 
 .card{
-    background:white;
+    background:#fff;
     border-radius:18px;
     overflow:hidden;
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    transition:0.3s;
+    transition:transform 0.3s ease;
 }
 
 .card:hover{
@@ -94,6 +96,7 @@ body{
     width:100%;
     height:350px;
     object-fit:cover;
+    display:block;
 }
 
 .card-content{
@@ -103,7 +106,7 @@ body{
 .card h3{
     margin-bottom:10px;
     font-size:28px;
-    font-family:'Playfair Display',serif;
+    font-family:'Playfair Display', serif;
 }
 
 .card p{
@@ -114,11 +117,11 @@ body{
 .btn{
     display:inline-block;
     padding:12px 24px;
-    background:black;
-    color:white;
+    background:#000;
+    color:#fff;
     text-decoration:none;
     border-radius:8px;
-    transition:0.3s;
+    transition:background 0.3s ease;
 }
 
 .btn:hover{
@@ -131,7 +134,7 @@ footer{
     text-align:center;
     padding:40px;
     background:#111;
-    color:white;
+    color:#fff;
 }
 
 .disclosure{
@@ -140,17 +143,12 @@ footer{
     font-size:14px;
     opacity:0.85;
 }
-
 </style>
 </head>
 <body>
 
-<!-- HERO -->
-
 <section class="hero">
-
     <h1>Hello</h1>
-
     <h2>My Amazon Finds</h2>
 
     <p>
@@ -158,88 +156,66 @@ footer{
         and useful gadgets hand-picked to make everyday
         life better.
     </p>
-
 </section>
 
-<!-- CATEGORIES -->
+<main>
+    <h2 class="section-title">Shop By Category</h2>
 
-<h2 class="section-title">Shop By Category</h2>
+    <section class="categories">
 
-<section class="categories">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80" alt="Fashion">
 
-    <!-- FASHION -->
+            <div class="card-content">
+                <h3>Clothing</h3>
 
-    <div class="card">
+                <p>
+                    Discover stylish outfits, fashion essentials,
+                    and trending wardrobe picks.
+                </p>
 
-        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80" alt="Fashion">
-
-        <div class="card-content">
-
-            <h3>Clothing</h3>
-
-            <p>
-                Discover stylish outfits, fashion essentials,
-                and trending wardrobe picks.
-            </p>
-
-            <a href="#" class="btn">Explore</a>
-
+                <a href="#" class="btn">Explore</a>
+            </div>
         </div>
 
-    </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Home Decor">
 
-    <!-- HOME DECOR -->
+            <div class="card-content">
+                <h3>Home Decor</h3>
 
-    <div class="card">
+                <p>
+                    Elegant furniture, room accessories,
+                    and modern home inspiration.
+                </p>
 
-        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Home Decor">
-
-        <div class="card-content">
-
-            <h3>Home Decor</h3>
-
-            <p>
-                Elegant furniture, room accessories,
-                and modern home inspiration.
-            </p>
-
-            <a href="#" class="btn">Explore</a>
-
+                <a href="#" class="btn">Explore</a>
+            </div>
         </div>
 
-    </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80" alt="Gadgets">
 
-    <!-- GADGETS -->
+            <div class="card-content">
+                <h3>Gadgets</h3>
 
-    <div class="card">
+                <p>
+                    Trending tech, smart devices,
+                    and useful gadgets for daily life.
+                </p>
 
-        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80" alt="Gadgets">
-
-        <div class="card-content">
-
-            <h3>Gadgets</h3>
-
-            <p>
-                Trending tech, smart devices,
-                and useful gadgets for daily life.
-            </p>
-
-            <a href="#" class="btn">Explore</a>
-
+                <a href="#" class="btn">Explore</a>
+            </div>
         </div>
 
-    </div>
-
-</section>
+    </section>
+</main>
 
 <footer>
-
     <div class="disclosure">
-        Disclosure: As an Amazon Associate, I earn from
-        qualifying purchases. Product recommendations on
-        this website may contain affiliate links.
+        Disclosure: As an Amazon Associate, I earn from qualifying purchases.
+        Product recommendations on this website may contain affiliate links.
     </div>
-
 </footer>
 
 </body>
